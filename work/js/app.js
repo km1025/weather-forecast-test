@@ -1,4 +1,4 @@
-// 都市の選択
+//都市の選択
 document.getElementById("get-weather").addEventListener("click",function (){
   let element = document.getElementById("city-select");
   //選択されたコードを取得
@@ -13,10 +13,7 @@ document.getElementById("get-weather").addEventListener("click",function (){
   })
   .then(function(weather){
     console.log(weather);
-    
-  //発表者と報告日時
-  let publishingOffice = weather[0].publishingOffice;
-  let reportDatetime = weather[0].reportDatetime;
+
   //エリア情報の取得
   let area = weather[0].timeSeries[0].areas[0];
   console.log(area);
@@ -41,5 +38,7 @@ document.getElementById("get-weather").addEventListener("click",function (){
 
   .catch(function (error){
     console.error("エラーが発生しました",error);
+    var errormessage='都市を選択してください';
+    alert(errormessage);
   });
 });
